@@ -1,0 +1,141 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Project_CE = Instance.new("ScreenGui")
+local Menu = Instance.new("Frame")
+local Main = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local HB50 = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local HB50_2 = Instance.new("TextButton")
+local HB50_3 = Instance.new("TextButton")
+
+--Properties:
+
+Project_CE.Name = "Project_CE"
+Project_CE.Parent = game.CoreGui
+Project_CE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Menu.Name = "Menu"
+Menu.Parent = Project_CE
+Menu.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+Menu.Position = UDim2.new(0.418087482, 0, 0.636474907, 0)
+Menu.Size = UDim2.new(0, 220, 0, 234)
+
+Main.Name = "Main"
+Main.Parent = Menu
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Size = UDim2.new(0, 220, 0, 234)
+Main.Image = "http://www.roblox.com/asset/?id=179199575"
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Position = UDim2.new(0, 0, -0.115384616, 0)
+TextLabel.Size = UDim2.new(0, 220, 0, 27)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Project CE"
+TextLabel.TextColor3 = Color3.fromRGB(85, 170, 255)
+TextLabel.TextSize = 14.000
+
+HB50.Name = "HB50"
+HB50.Parent = Main
+HB50.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HB50.Position = UDim2.new(0.286363631, 0, 0.538461566, 0)
+HB50.Size = UDim2.new(0, 95, 0, 23)
+HB50.Font = Enum.Font.SourceSans
+HB50.Text = "Hitbox 50"
+HB50.TextColor3 = Color3.fromRGB(85, 170, 255)
+HB50.TextSize = 14.000
+HB50.MouseButton1Down:connect(function()
+	_G.HeadSize = 50
+	_G.Disabled = true
+
+	game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.7
+						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+						v.Character.HumanoidRootPart.Material = "Neon"
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.Position = UDim2.new(0, 0, 0.277777791, 0)
+TextLabel_2.Size = UDim2.new(0, 220, 0, 27)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Crazy Hacks!"
+TextLabel_2.TextColor3 = Color3.fromRGB(85, 170, 255)
+TextLabel_2.TextSize = 14.000
+
+HB50_2.Name = "HB50"
+HB50_2.Parent = Main
+HB50_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HB50_2.Position = UDim2.new(0.286363631, 0, 0.688034236, 0)
+HB50_2.Size = UDim2.new(0, 95, 0, 23)
+HB50_2.Font = Enum.Font.SourceSans
+HB50_2.Text = "Hitbox 100"
+HB50_2.TextColor3 = Color3.fromRGB(85, 170, 255)
+HB50_2.TextSize = 14.000
+HB50_2.MouseButton1Down:connect(function()
+	_G.HeadSize = 100
+	_G.Disabled = true
+
+	game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.7
+						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+						v.Character.HumanoidRootPart.Material = "Neon"
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
+HB50_3.Name = "HB50"
+HB50_3.Parent = Main
+HB50_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HB50_3.Position = UDim2.new(0.286363631, 0, 0.850427389, 0)
+HB50_3.Size = UDim2.new(0, 95, 0, 23)
+HB50_3.Font = Enum.Font.SourceSans
+HB50_3.Text = "Hitbox 200"
+HB50_3.TextColor3 = Color3.fromRGB(85, 170, 255)
+HB50_3.TextSize = 14.000
+HB50_3.MouseButton1Down:connect(function()
+	_G.HeadSize = 200
+	_G.Disabled = true
+
+	game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.7
+						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+						v.Character.HumanoidRootPart.Material = "Neon"
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
+Main.ResetOnSpawn = false
